@@ -1,4 +1,4 @@
-package hr.java.spring.boot.Test.Repositoryy;
+package hr.java.spring.boot.Test.repository;
 
 import hr.java.spring.boot.Test.domain.Hardware;
 

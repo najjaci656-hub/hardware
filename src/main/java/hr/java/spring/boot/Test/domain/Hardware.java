@@ -12,5 +12,9 @@ public class Hardware {
     private int sifra;
     private int cijena;
     private String tip;
+    private long id;
+
+    public Hardware(String naziv, String number, int cijena, int i) {
+    }
 
 }

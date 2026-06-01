@@ -1,12 +1,13 @@
-package hr.java.spring.boot.Test.Serviss.impl;
+package hr.java.spring.boot.Test.servis.impl;
 
-import hr.java.spring.boot.Test.HardwareDto.HardwareDto;
-import hr.java.spring.boot.Test.Repositoryy.HardwareRepository;
-import hr.java.spring.boot.Test.Serviss.HardwareServis;
+import hr.java.spring.boot.Test.dto.HardwareDto;
+import hr.java.spring.boot.Test.repository.HardwareRepository;
+import hr.java.spring.boot.Test.servis.HardwareServis;
 import hr.java.spring.boot.Test.domain.Hardware;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -22,9 +23,16 @@ public class HardwareServisImpl implements HardwareServis {
     }
 
     private List<HardwareDto> toDto(List<Hardware> hardwares) {
-        return List.of();
+        List<HardwareDto> dtoLista = new ArrayList<>();
+
+        for (Hardware h : hardwares) {
+            HardwareDto dto = new HardwareDto(h.getId(), h.getSifra(), h.getCijena(), h.getNaziv(), h.getTip());
+            dtoLista.add(dto);
+        }
+
+        return dtoLista;
     }
-    }
+}
 
 
 
